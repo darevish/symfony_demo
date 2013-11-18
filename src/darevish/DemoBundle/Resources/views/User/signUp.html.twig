@@ -1,0 +1,11 @@
+{% from 'MopaBootstrapBundle::flash.html.twig' import flash %}
+
+{% extends "darevishDemoBundle::layout.html.twig" %}
+
+{% block page_title %}Sign up{% endblock %}
+
+{% block my_content %}
+    <form method="post" action="{{ path('signup') }}"
+        {{ form_errors(form) }}
+    {{ form_end(form) }}
+{% endblock %}

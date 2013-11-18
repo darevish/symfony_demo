@@ -1,0 +1,39 @@
+{% extends 'MopaBootstrapBundle::base.html.twig' %}
+
+{% block head_style %}
+    {% stylesheets
+        '@darevishDemoBundle/Resources/public/css/site.css'
+    %}
+    <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+    {% endstylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body_start %}<div class="wrapper">{% endblock %}
+{% block body_end %}</div>{% endblock %}
+
+{% block title %}Demo stuff{% endblock %}
+
+{% block page_header %}{% endblock %}
+
+{% block navbar %}
+    {{ knp_menu_render('darevishDemoBundle:Builder:mainMenu') }}
+{% endblock %}
+
+{% block content %}
+    <div class="my_content">
+        <h1 class="page_title"><small>{% block page_title %}{% endblock %}</small></h1>
+        {% block my_content %}{% endblock %}
+    </div>
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
+{% block foot_script_assetic %}
+    {% javascripts
+    '@darevishDemoBundle/Resources/public/js/jquery-1.10.2.min.js'
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    {{ parent() }}
+{% endblock %}

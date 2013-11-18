@@ -1,0 +1,4 @@
+darevish_demo:
+    resource: "@darevishDemoBundle/Controller/"
+    type:     annotation
+    prefix:   /

@@ -1,0 +1,53 @@
+{% extends "darevishDemoBundle::layout.html.twig" %}
+
+{% block page_title %}Hello{% endblock %}
+
+{% block my_content %}
+    {% if is_real_token %}
+        <p>Hello {{ name }}! You can only check static sites, if you <a href="{{ path('login') }}">log in</a>. For that, you can use one of these:</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1.</td>
+                    <td>user</td>
+                    <td>userpass</td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td>admin</td>
+                    <td>adminpass</td>
+                </tr>
+            </tbody>
+        </table>
+        {% if registered_users|length %}
+            <p>And you can <a href="{{ path('signup') }}">sign up</a>, or use these registered account as well:</p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in registered_users %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ user.username }}</td>
+                            <td>{{ user.password }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    {% else %}
+        <p>Hello {{ name }}! Enjoy reading lorem ipsum!!!</p>
+    {% endif %}
+{% endblock %}
