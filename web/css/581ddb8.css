@@ -1,0 +1,28 @@
+.wrapper {
+    width: 60%;
+    margin-left: 20%;
+}
+
+.nav {
+    border-bottom: 1px solid #eeeeee;
+}
+
+.nav > li {
+    float: left;
+}
+
+.nav li.float-right {
+    float: right;
+}
+
+.nav > li > a {
+    display:block;
+}
+
+.page_title {
+    margin-top: 10px;
+}
+
+.my_content {
+    margin: 10px 0 20px;
+}

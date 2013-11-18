@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "9ecf51bd3f0ed2620bcde97e6cba373b",
+    "hash": "cac1a6ed53ec2f2ed2e9e2440d9fbb7a",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -733,6 +733,86 @@
                 "orm"
             ],
             "time": "2013-05-11 07:51:12"
+        },
+        {
+            "name": "gedmo/doctrine-extensions",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/l3pp4rd/DoctrineExtensions.git",
+                "reference": "1b940f2069fb897df61fb55d96d508db3851ced3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/l3pp4rd/DoctrineExtensions/zipball/1b940f2069fb897df61fb55d96d508db3851ced3",
+                "reference": "1b940f2069fb897df61fb55d96d508db3851ced3",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/common": ">=2.2,<2.5-dev",
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "doctrine/common": ">=2.4.0-RC3",
+                "doctrine/dbal": ">=2.4.0-RC1",
+                "doctrine/mongodb": ">=1.0.3",
+                "doctrine/mongodb-odm": ">=1.0.0-BETA9",
+                "doctrine/orm": ">=2.4.0-RC1",
+                "symfony/yaml": "2.3.1"
+            },
+            "suggest": {
+                "doctrine/dbal": ">=2.3.2",
+                "doctrine/mongodb": ">=1.0.1",
+                "doctrine/mongodb-odm": ">=1.0.0-BETA7",
+                "doctrine/orm": ">=2.3.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Gedmo\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Buchmann",
+                    "email": "david@liip.ch"
+                },
+                {
+                    "name": "Gediminas Morkevicius",
+                    "email": "gediminas.morkevicius@gmail.com"
+                },
+                {
+                    "name": "Gustavo Falco",
+                    "email": "comfortablynumb84@gmail.com"
+                }
+            ],
+            "description": "Doctrine2 behavioral extensions",
+            "homepage": "http://gediminasm.org/",
+            "keywords": [
+                "Blameable",
+                "behaviors",
+                "doctrine2",
+                "extensions",
+                "gedmo",
+                "loggable",
+                "nestedset",
+                "sluggable",
+                "sortable",
+                "timestampable",
+                "translatable",
+                "tree",
+                "uploadable"
+            ],
+            "time": "2013-11-17 16:47:29"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -1773,12 +1853,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "a2c6daafd05a54d1c944a9d6f2dc076914121117"
+                "reference": "ee1c53dca054137e196467b8ca3a0ef96f74f64d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/a2c6daafd05a54d1c944a9d6f2dc076914121117",
-                "reference": "a2c6daafd05a54d1c944a9d6f2dc076914121117",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/ee1c53dca054137e196467b8ca3a0ef96f74f64d",
+                "reference": "ee1c53dca054137e196467b8ca3a0ef96f74f64d",
                 "shasum": ""
             },
             "type": "library",
@@ -1807,7 +1887,7 @@
                 "bootstrap",
                 "css"
             ],
-            "time": "2013-11-17 01:48:31"
+            "time": "2013-11-18 09:57:56"
         },
         {
             "name": "twig/extensions",
@@ -1919,7 +1999,8 @@
         "mopa/bootstrap-bundle": 20,
         "twbs/bootstrap": 20,
         "knplabs/knp-menu-bundle": 20,
-        "knplabs/knp-menu": 20
+        "knplabs/knp-menu": 20,
+        "gedmo/doctrine-extensions": 20
     },
     "platform": {
         "php": ">=5.3.3"

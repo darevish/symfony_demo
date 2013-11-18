@@ -24,7 +24,8 @@
         "mopa/bootstrap-bundle": "dev-master",
         "twbs/bootstrap": "dev-master",
         "knplabs/knp-menu-bundle": "dev-master",
-        "knplabs/knp-menu": "2.0.*@dev"
+        "knplabs/knp-menu": "2.0.*@dev",
+        "gedmo/doctrine-extensions": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [
