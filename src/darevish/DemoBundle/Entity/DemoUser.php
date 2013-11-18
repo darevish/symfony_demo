@@ -5,6 +5,7 @@ namespace darevish\DemoBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\Role\Role;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * darevish\DemoBundle\Entity\DemoUser
@@ -50,6 +51,18 @@ class DemoUser implements UserInterface, \Serializable
      * @ORM\Column(name="is_admin", type="boolean")
      */
     private $isAdmin;
+
+    /**
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(name="created_at", type="datetime")
+     */
+    private $createdAt;
+
+    /**
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(name="last_login", type="datetime")
+     */
+    private $lastLogin;
 
     public function __construct()
     {
@@ -120,6 +133,38 @@ class DemoUser implements UserInterface, \Serializable
     public function getIsAdmin()
     {
         return $this->isAdmin;
+    }
+
+    /**
+     * @param mixed $createdAt
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param mixed $lastLogin
+     */
+    public function setLastLogin($lastLogin)
+    {
+        $this->lastLogin = $lastLogin;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLastLogin()
+    {
+        return $this->lastLogin;
     }
 
     /**
