@@ -10,6 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
+use Symfony\Component\Security\Core\Encoder\EncoderFactoryInterface;
 
 /**
  * Class UserController
@@ -30,6 +31,13 @@ class UserController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+
+            /** @var EncoderFactoryInterface $factory */
+            $factory = $this->get('security.encoder_factory');
+
+            $encoder = $factory->getEncoder($demoUser);
+            $password = $encoder->encodePassword($demoUser->getPassword(), $demoUser->getSalt());
+            $demoUser->setPassword($password);
 
             $em->persist($demoUser);
             $em->flush();

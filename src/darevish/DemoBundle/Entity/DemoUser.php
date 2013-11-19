@@ -68,7 +68,7 @@ class DemoUser implements UserInterface, \Serializable
     {
         $this->isActive = true;
         $this->isAdmin = false;
-        $this->salt = '';
+        $this->salt = md5(uniqid(null, true));
     }
 
     /**
@@ -243,10 +243,7 @@ class DemoUser implements UserInterface, \Serializable
      * This is important if, at any given point, sensitive information like
      * the plain-text password is stored on this object.
      */
-    public function eraseCredentials()
-    {
-        $this->password = '';
-    }
+    public function eraseCredentials() {}
 
     /**
      * @see \Serializable::serialize()
