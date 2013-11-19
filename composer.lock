@@ -740,12 +740,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/l3pp4rd/DoctrineExtensions.git",
-                "reference": "1b940f2069fb897df61fb55d96d508db3851ced3"
+                "reference": "0ccc214d2bc204a063e2d8b347806b5fc5a189e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/l3pp4rd/DoctrineExtensions/zipball/1b940f2069fb897df61fb55d96d508db3851ced3",
-                "reference": "1b940f2069fb897df61fb55d96d508db3851ced3",
+                "url": "https://api.github.com/repos/l3pp4rd/DoctrineExtensions/zipball/0ccc214d2bc204a063e2d8b347806b5fc5a189e5",
+                "reference": "0ccc214d2bc204a063e2d8b347806b5fc5a189e5",
                 "shasum": ""
             },
             "require": {
@@ -812,7 +812,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2013-11-17 16:47:29"
+            "time": "2013-11-19 21:10:19"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -1853,12 +1853,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "ee1c53dca054137e196467b8ca3a0ef96f74f64d"
+                "reference": "2172e2ea8a79f8c5d43863d83ff31b50abb391a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/ee1c53dca054137e196467b8ca3a0ef96f74f64d",
-                "reference": "ee1c53dca054137e196467b8ca3a0ef96f74f64d",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/2172e2ea8a79f8c5d43863d83ff31b50abb391a0",
+                "reference": "2172e2ea8a79f8c5d43863d83ff31b50abb391a0",
                 "shasum": ""
             },
             "type": "library",
@@ -1887,7 +1887,7 @@
                 "bootstrap",
                 "css"
             ],
-            "time": "2013-11-18 09:57:56"
+            "time": "2013-11-19 03:29:08"
         },
         {
             "name": "twig/extensions",
