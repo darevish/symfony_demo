@@ -8,17 +8,18 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony\Component\Security\Core\SecurityContext;
 use Symfony\Component\Security\Http\Authentication\AuthenticationSuccessHandlerInterface;
 
 class LoginSuccessHandler implements AuthenticationSuccessHandlerInterface
 {
-    private $em;
+    private $securityContext;
 
     private $router;
 
-    function __construct(RouterInterface $router, EntityManager $em)
+    function __construct(RouterInterface $router, SecurityContext $securityContext)
     {
-        $this->em = $em;
+        $this->securityContext = $securityContext;
         $this->router = $router;
     }
 
@@ -34,6 +35,12 @@ class LoginSuccessHandler implements AuthenticationSuccessHandlerInterface
      */
     public function onAuthenticationSuccess(Request $request, TokenInterface $token)
     {
-        return new RedirectResponse($this->router->generate('default_index'));
+        if ($this->securityContext->isGranted('ROLE_ADMIN')) {
+            $uri = $this->router->generate('user_admin_list');
+        } else {
+            $uri = $this->router->generate('default_index');
+        }
+
+        return new RedirectResponse($uri);
     }
 }

@@ -1,0 +1,30 @@
+{% extends "darevishDemoBundle::layout.html.twig" %}
+
+{% block page_title %}About{% endblock %}
+
+{% block my_content %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Username</th>
+                <th>Admin?</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{% if user.isAdmin %}Yes{% else %}No{% endif %}</td>
+                    <td><a href="{{ path('user_admin_edit', {'demoUser': user.id}) }}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">There are no users in the database.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

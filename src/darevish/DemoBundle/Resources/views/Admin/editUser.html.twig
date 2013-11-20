@@ -1,0 +1,38 @@
+{% from 'MopaBootstrapBundle::flash.html.twig' import flash %}
+
+{% extends "darevishDemoBundle::layout.html.twig" %}
+
+{% block page_title %}Edit user: {{ user.username }}{% endblock %}
+
+{% block my_content %}
+    <form method="post" action="{{ path('user_admin_edit', {'demoUser': user.id}) }}"
+        {{ form_errors(form) }}
+        {{ form_row(form.username) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.isAdmin) }}
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteConfirm">Delete</button>
+        <button type="submit" class="btn btn-primary">Save</button>
+    {{ form_end(form) }}
+
+    <!-- Modal -->
+    <div class="modal fade" id="deleteConfirm" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="deleteConfirmLabel">Are you sure?</h4>
+                </div>
+                <div class="modal-body">
+                    Do you really want to purge this awesome user from the system? You are no human...
+                </div>
+                <div class="modal-footer">
+                    <form method="post" action="{{ path('user_admin_delete', {'demoUser': user.id}) }}">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Delete</button>
+                    </form>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+{% endblock %}

@@ -12,7 +12,7 @@
     <services>
         <service id="darevish_demo.login_success_handler" class="%darevish_demo.login_success_handler.class%">
             <argument type="service" id="router" />
-            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument type="service" id="security.context" />
         </service>
 
         <service id="darevish_demo.login_listener" class="%darevish_demo.login_listener.class%">
