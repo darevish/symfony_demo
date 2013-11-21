@@ -118,7 +118,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -185,7 +185,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan H. Wage",
+                    "name": "Jonathan Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -516,7 +516,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan H. Wage",
+                    "name": "Jonathan Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -1177,12 +1177,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phiamo/MopaBootstrapBundle.git",
-                "reference": "622aebb4516064dae306ef4f017b2f3560f41b60"
+                "reference": "67241dbcca284af8b99a18cf83752e9f72dfdf83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phiamo/MopaBootstrapBundle/zipball/622aebb4516064dae306ef4f017b2f3560f41b60",
-                "reference": "622aebb4516064dae306ef4f017b2f3560f41b60",
+                "url": "https://api.github.com/repos/phiamo/MopaBootstrapBundle/zipball/67241dbcca284af8b99a18cf83752e9f72dfdf83",
+                "reference": "67241dbcca284af8b99a18cf83752e9f72dfdf83",
                 "shasum": ""
             },
             "require": {
@@ -1234,7 +1234,7 @@
                 "form",
                 "template"
             ],
-            "time": "2013-11-15 16:57:47"
+            "time": "2013-11-20 00:04:50"
         },
         {
             "name": "mopa/composer-bridge",
@@ -1580,21 +1580,20 @@
         },
         {
             "name": "symfony/icu",
-            "version": "v1.2.0",
+            "version": "v1.0.0",
             "target-dir": "Symfony/Component/Icu",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Icu.git",
-                "reference": "7299cd3d8d6602103d1ebff5d0a9917b7bc6de72"
+                "reference": "cac3fdfb111adbe590155f491594636d45129783"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Icu/zipball/7299cd3d8d6602103d1ebff5d0a9917b7bc6de72",
-                "reference": "7299cd3d8d6602103d1ebff5d0a9917b7bc6de72",
+                "url": "https://api.github.com/repos/symfony/Icu/zipball/cac3fdfb111adbe590155f491594636d45129783",
+                "reference": "cac3fdfb111adbe590155f491594636d45129783",
                 "shasum": ""
             },
             "require": {
-                "lib-icu": ">=4.4",
                 "php": ">=5.3.3",
                 "symfony/intl": "~2.3"
             },
@@ -1624,7 +1623,7 @@
                 "icu",
                 "intl"
             ],
-            "time": "2013-06-03 18:32:58"
+            "time": "2013-06-03 18:32:07"
         },
         {
             "name": "symfony/monolog-bundle",
@@ -1853,12 +1852,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "2172e2ea8a79f8c5d43863d83ff31b50abb391a0"
+                "reference": "6ed5a844a8ca3582240ddda70d63a3d7bfea7c50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/2172e2ea8a79f8c5d43863d83ff31b50abb391a0",
-                "reference": "2172e2ea8a79f8c5d43863d83ff31b50abb391a0",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/6ed5a844a8ca3582240ddda70d63a3d7bfea7c50",
+                "reference": "6ed5a844a8ca3582240ddda70d63a3d7bfea7c50",
                 "shasum": ""
             },
             "type": "library",
@@ -1887,7 +1886,7 @@
                 "bootstrap",
                 "css"
             ],
-            "time": "2013-11-19 03:29:08"
+            "time": "2013-11-19 22:15:09"
         },
         {
             "name": "twig/extensions",
