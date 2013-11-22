@@ -27,31 +27,34 @@ class UserController extends Controller
         $demoUser = new DemoUser();
         $form = $this->createForm(new RegistrationType(), $demoUser);
 
-        $form->handleRequest($request);
+        if ($request->getMethod() == 'POST')
+        {
+            $form->handleRequest($request);
 
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
+            if ($form->isValid()) {
+                $em = $this->getDoctrine()->getManager();
 
-            /** @var EncoderFactoryInterface $factory */
-            $factory = $this->get('security.encoder_factory');
+                /** @var EncoderFactoryInterface $factory */
+                $factory = $this->get('security.encoder_factory');
 
-            $encoder = $factory->getEncoder($demoUser);
-            $password = $encoder->encodePassword($demoUser->getPassword(), $demoUser->getSalt());
-            $demoUser->setPassword($password);
+                $encoder = $factory->getEncoder($demoUser);
+                $password = $encoder->encodePassword($demoUser->getPassword(), $demoUser->getSalt());
+                $demoUser->setPassword($password);
 
-            $em->persist($demoUser);
-            $em->flush();
+                $em->persist($demoUser);
+                $em->flush();
 
-            /** @var Session $session */
-            $session = $this->get('session');
+                /** @var Session $session */
+                $session = $this->get('session');
 
-            $token = new UsernamePasswordToken($demoUser, null, 'secured_area', $demoUser->getRoles());
-            $this->get('security.context')->setToken($token);
-            $this->get('session')->set('_security_secured_area',serialize($token));
+                $token = new UsernamePasswordToken($demoUser, null, 'secured_area', $demoUser->getRoles());
+                $this->get('security.context')->setToken($token);
+                $this->get('session')->set('_security_secured_area',serialize($token));
 
-            $session->getFlashBag()->add('success', 'Save successful');
+                $session->getFlashBag()->add('success', 'Save successful');
 
-            return $this->redirect($this->generateUrl('default_index'));
+                return $this->redirect($this->generateUrl('default_index'));
+            }
         }
 
         return array(

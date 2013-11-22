@@ -73,6 +73,14 @@ class AdminController extends Controller
 
             /** @var Session $session */
             $session = $this->get('session');
+
+            $securityContext = $this->get("security.context");
+            $user = $securityContext->getToken()->getUser();
+            if ($user instanceof DemoUser && $user->getId() == $demoUser->getId()) {
+                $session->invalidate();
+                $securityContext->setToken(null);
+            }
+
             $session->getFlashBag()->add('success', 'Save successful');
 
         }
