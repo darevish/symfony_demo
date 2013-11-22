@@ -9,6 +9,10 @@
         {{ flash('danger', error.message, true, false) }}
     {% endif %}
 
+    {% if last_username_cookie %}
+        <div class="alert alert-info">Your last username during the past day was: <strong>{{ last_username_cookie }}</strong></div>
+    {% endif %}
+
     <form method="post" action="{{ path('login_check') }}">
         <div  class="form-group">
             <label for="username" class="control-label col-lg-3 control-label required">Username</label>

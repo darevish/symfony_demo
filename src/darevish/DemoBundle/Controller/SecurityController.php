@@ -30,9 +30,12 @@ class SecurityController extends Controller
 
         $lastUsername = $request->getSession()->get(SecurityContext::LAST_USERNAME);
 
+        $lastUsernameCookie = $request->cookies->get($this->container->getParameter('last_username_cookie_name'));
+
         return array(
-            'error'         => $error,
-            'last_username' => $lastUsername
+            'error'                => $error,
+            'last_username'        => $lastUsername,
+            'last_username_cookie' => $lastUsernameCookie,
         );
     }
 

@@ -3,6 +3,7 @@
 namespace darevish\DemoBundle\Listener;
 
 use Doctrine\ORM\EntityManager;
+use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,10 +18,13 @@ class LoginSuccessHandler implements AuthenticationSuccessHandlerInterface
 
     private $router;
 
-    function __construct(RouterInterface $router, SecurityContext $securityContext)
+    private $cookieName;
+
+    function __construct(RouterInterface $router, SecurityContext $securityContext, $cookieName)
     {
         $this->securityContext = $securityContext;
         $this->router = $router;
+        $this->cookieName = $cookieName;
     }
 
     /**
@@ -41,6 +45,10 @@ class LoginSuccessHandler implements AuthenticationSuccessHandlerInterface
             $uri = $this->router->generate('default_index');
         }
 
-        return new RedirectResponse($uri);
+        $response = new RedirectResponse($uri);
+
+        $response->headers->setCookie(new Cookie($this->cookieName, $token->getUsername(), new \DateTime('+1 day')));
+
+        return $response;
     }
 }

@@ -13,6 +13,7 @@
         <service id="darevish_demo.login_success_handler" class="%darevish_demo.login_success_handler.class%">
             <argument type="service" id="router" />
             <argument type="service" id="security.context" />
+            <argument>%last_username_cookie_name%</argument>
         </service>
 
         <service id="darevish_demo.login_listener" class="%darevish_demo.login_listener.class%">

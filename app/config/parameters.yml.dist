@@ -13,3 +13,5 @@ parameters:
 
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
+
+    last_username_cookie_name: symfony_demo_last_username
